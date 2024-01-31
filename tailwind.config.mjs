@@ -14,12 +14,14 @@ export default {
         garden: {
           ...require("daisyui/src/theming/themes")["garden"],
           primary: "#0369a1",
+          "primary-content": "#ffffff",
         },
       },
       {
         retro: {
           ...require("daisyui/src/theming/themes")["retro"],
-          primary: "#b9a878",
+          primary: "#a16207",
+          "primary-content": "#ffffff",
         },
       },
     ],
