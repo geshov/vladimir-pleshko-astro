@@ -1,7 +1,7 @@
 ---
 const name = "Владимир Юрьевич Плешко";
 const ranks = [
-  "Доктор математических наук",
+  "Доктор физико-математических наук (PDH)",
   "Программист",
   "Более 35 лет опыта работы в IT-отрасли",
 ];
@@ -12,14 +12,29 @@ const ranks = [
     <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-10">
       <div class="md:col-span-7">
         <div class="flex flex-col gap-8">
+          <label class="flex items-center gap-2 cursor-pointer">
+            <span class="font-medium">Garden</span>
+            <input
+              type="checkbox"
+              value="retro"
+              class="toggle theme-controller"
+            />
+            <span class="font-medium">Retro</span>
+          </label>
+
           <h1 class="text-5xl font-bold">{name}</h1>
 
           <div class="flex flex-col gap-3">
             {
               ranks.map((rank) => (
                 <div class="flex items-center gap-2">
-                  <box-icon name="check-circle" class="w-10 h-10 fill-accent" />
-                  <span class="text-lg">{rank}</span>
+                  <div>
+                    <box-icon
+                      name="check-circle"
+                      class="w-10 h-10 fill-accent"
+                    />
+                  </div>
+                  <div class="text-lg">{rank}</div>
                 </div>
               ))
             }
