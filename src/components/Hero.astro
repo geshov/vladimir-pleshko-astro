@@ -14,11 +14,13 @@ const ranks = [
         <div class="flex flex-col gap-8">
           <label class="flex items-center gap-2 cursor-pointer w-fit">
             <div class="badge badge-ghost font-medium">Garden</div>
+
             <input
               type="checkbox"
               value="retro"
               class="toggle theme-controller"
             />
+
             <div class="badge badge-ghost">Retro</div>
           </label>
 
@@ -27,13 +29,16 @@ const ranks = [
           <div class="flex flex-col gap-3">
             {
               ranks.map((rank) => (
-                <div class="flex items-center gap-2">
+                <div
+                  class="rank flex items-center gap-2"
+                  style="transform: translateX(150px); opacity: 0;">
                   <div class="w-10 h-10">
                     <box-icon
                       name="check-circle"
                       class="w-10 h-10 fill-accent"
                     />
                   </div>
+
                   <div class="text-lg">{rank}</div>
                 </div>
               ))
@@ -55,4 +60,18 @@ const ranks = [
 
 <script>
   import anime from "animejs/lib/anime.es.js";
+
+  const ranks = document.querySelectorAll(".rank");
+
+  const timeline = anime.timeline({
+    duration: 1000,
+  });
+
+  ranks.forEach((rank) => {
+    timeline.add({
+      targets: rank,
+      translateX: 0,
+      opacity: 1,
+    });
+  });
 </script>
