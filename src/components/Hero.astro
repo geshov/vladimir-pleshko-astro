@@ -15,15 +15,13 @@ const ranks = [
 const cells = Array.from({ length: 150 }, (empty, index) => index);
 ---
 
-<section class="_section">
+<section class="_section overflow-hidden">
   <div class="_container">
     <div
       x-data="hero"
       class="grid grid-cols-1 md:grid-cols-12 items-center gap-10">
       <div class="md:col-span-7">
-        <div
-          x-intersect.half.once="showRanks"
-          class="flex flex-col gap-8 overflow-hidden">
+        <div x-intersect.half.once="showRanks" class="flex flex-col gap-8">
           <label class="flex items-center gap-2 cursor-pointer w-fit">
             <div class="badge badge-ghost font-medium">Garden</div>
 
@@ -70,7 +68,9 @@ const cells = Array.from({ length: 150 }, (empty, index) => index);
           <div class="absolute w-full h-full grid grid-cols-10 z-10">
             {cells.map((cell) => <div class="_" />)}
           </div>
+
           <div class="cover absolute w-full h-full bg-base-100 z-20"></div>
+
           <Picture
             src={photo}
             widths={widths}
