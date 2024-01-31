@@ -1,6 +1,8 @@
 ---
 import "@fontsource-variable/inter";
 import "../assets/css/global.css";
+
+import Background from "../components/Background.astro";
 ---
 
 <html lang="ru">
@@ -21,6 +23,8 @@ import "../assets/css/global.css";
   </head>
 
   <body>
+    <Background />
+
     <main>
       <slot />
     </main>

@@ -10,13 +10,13 @@ export default {
     themes: ["garden", "retro"],
 
     themes: [
-      {
-        garden: {
-          ...require("daisyui/src/theming/themes")["garden"],
-          primary: "#0369a1",
-          "primary-content": "#ffffff",
-        },
-      },
+      // {
+      //   garden: {
+      //     ...require("daisyui/src/theming/themes")["garden"],
+      //     primary: "#0369a1",
+      //     "primary-content": "#ffffff",
+      //   },
+      // },
       {
         retro: {
           ...require("daisyui/src/theming/themes")["retro"],
