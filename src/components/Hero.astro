@@ -1,10 +1,18 @@
 ---
+import { Picture } from "astro:assets";
+import photo from "../assets/images/spiderman.jpg";
+
+const widths = [400, 800, 1200, 1600];
+const sizes = "(max-width: 640px) 95vw, (max-width: 768px) 85vw, 30vw";
+
 const name = "Владимир Юрьевич Плешко";
 const ranks = [
   "Доктор физико-математических наук",
   "Программист",
   "Более 35 лет опыта работы в IT-отрасли",
 ];
+
+const cells = Array.from({ length: 150 }, (empty, index) => index);
 ---
 
 <section class="_section">
@@ -52,7 +60,23 @@ const ranks = [
       </div>
 
       <div class="md:col-span-5 px-0 sm:px-10 md:px-0 lg:px-10">
-        <div class="skeleton w-full h-[450px]"></div>
+        <div class="relative rounded-lg overflow-hidden">
+          <div class="absolute w-full h-full grid grid-cols-10">
+            {
+              cells.map((cell) => (
+                <div class="cell aspect-square bg-base-100" />
+              ))
+            }
+          </div>
+          <div class="cells absolute w-full h-full bg-base-100"></div>
+          <Picture
+            src={photo}
+            widths={widths}
+            sizes={sizes}
+            alt={name}
+            loading="eager"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -64,7 +88,7 @@ const ranks = [
   const ranks = document.querySelectorAll(".rank");
 
   const timeline = anime.timeline({
-    duration: 1000,
+    duration: 750,
   });
 
   ranks.forEach((rank) => {
@@ -73,5 +97,20 @@ const ranks = [
       translateX: 0,
       opacity: 1,
     });
+  });
+
+  anime({
+    targets: ".cells",
+    opacity: 0,
+    easing: "linear",
+    delay: 250,
+    duration: 250,
+  });
+
+  anime({
+    targets: ".cell",
+    scale: 0,
+    easing: "linear",
+    duration: 2500,
   });
 </script>
