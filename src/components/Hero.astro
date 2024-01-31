@@ -2,6 +2,8 @@
 import { Picture } from "astro:assets";
 import photo from "../assets/images/spiderman.jpg";
 
+import Spider from "./Spider.astro";
+
 const widths = [400, 800, 1200, 1600];
 const sizes = "(max-width: 640px) 95vw, (max-width: 768px) 85vw, 30vw";
 
@@ -21,7 +23,9 @@ const cells = Array.from({ length: 150 }, (empty, index) => index);
       x-data="hero"
       class="grid grid-cols-1 md:grid-cols-12 items-center gap-10">
       <div class="md:col-span-7 md:order-2">
-        <div x-intersect.half.once="showRanks" class="flex flex-col gap-8">
+        <div
+          x-intersect.half.once="showRanks"
+          class="relative flex flex-col gap-8">
           <!-- <label class="flex items-center gap-2 cursor-pointer w-fit">
             <div class="badge badge-ghost font-medium">Garden</div>
 
@@ -57,6 +61,10 @@ const cells = Array.from({ length: 150 }, (empty, index) => index);
 
           <div class="rank" style="transform: translateX(150px); opacity: 0;">
             <button class="btn btn-primary">История успеха</button>
+          </div>
+
+          <div class="absolute right-0 bottom-0 w-32 fill-base-300 -z-50">
+            <Spider />
           </div>
         </div>
       </div>
