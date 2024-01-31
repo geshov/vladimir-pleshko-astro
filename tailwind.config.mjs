@@ -8,5 +8,20 @@ export default {
   daisyui: {
     logs: false,
     themes: ["garden", "retro"],
+
+    themes: [
+      {
+        garden: {
+          ...require("daisyui/src/theming/themes")["garden"],
+          primary: "#0369a1",
+        },
+      },
+      {
+        retro: {
+          ...require("daisyui/src/theming/themes")["retro"],
+          primary: "#b9a878",
+        },
+      },
+    ],
   },
 };
