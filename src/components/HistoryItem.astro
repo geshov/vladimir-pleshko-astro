@@ -1,0 +1,24 @@
+---
+const { item, index } = Astro.props;
+const { Content } = await item.render();
+---
+
+<li>
+  {index > 0 && <hr />}
+
+  <div class="timeline-middle">
+    <box-icon type="solid" name="check-circle" class="w-10 h-10 fill-base-300"
+    ></box-icon>
+  </div>
+
+  <div
+    class={`${
+      index % 2 === 0 ? "timeline-start md:text-end" : "timeline-end"
+    } !mb-10`}>
+    <time class="font-mono">{item.data.year}</time>
+    <div class="text-xl font-bold mb-2">{item.data.title}</div>
+    <Content />
+  </div>
+
+  <hr />
+</li>
