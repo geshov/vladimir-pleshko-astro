@@ -6,24 +6,7 @@ export default {
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
+    themes: ["retro"],
     logs: false,
-    themes: ["garden", "retro"],
-
-    themes: [
-      // {
-      //   garden: {
-      //     ...require("daisyui/src/theming/themes")["garden"],
-      //     primary: "#0369a1",
-      //     "primary-content": "#ffffff",
-      //   },
-      // },
-      {
-        retro: {
-          ...require("daisyui/src/theming/themes")["retro"],
-          primary: "#a16207",
-          "primary-content": "#ffffff",
-        },
-      },
-    ],
   },
 };
