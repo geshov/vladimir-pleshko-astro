@@ -2,8 +2,8 @@
 import { Picture } from "astro:assets";
 import photo from "../assets/images/hero.jpg";
 
-import Spider from "./Spider.astro";
 import Dino1 from "./Dino1.astro";
+import Dino2 from "./Dino2.astro";
 
 const widths = [400, 800, 1200, 1600];
 const sizes = "(max-width: 640px) 95vw, (max-width: 768px) 85vw, 30vw";
@@ -23,10 +23,10 @@ const cells = Array.from({ length: 120 }, (empty, index) => index);
     <div
       x-data="hero"
       class="grid grid-cols-1 md:grid-cols-12 items-center gap-10">
-      <div class="md:col-span-7 md:order-2">
+      <div class="relative md:col-span-7 md:order-2">
         <div
           x-intersect.half.once="showRanks"
-          class="relative flex flex-col gap-8">
+          class="flex flex-col gap-8 my-12">
           <!-- <label class="flex items-center gap-2 cursor-pointer w-fit">
             <div class="badge badge-ghost font-medium">Garden</div>
 
@@ -63,10 +63,14 @@ const cells = Array.from({ length: 120 }, (empty, index) => index);
           <div class="rank" style="transform: translateX(150px); opacity: 0;">
             <button class="btn btn-primary">История успеха</button>
           </div>
+        </div>
 
-          <div class="absolute right-0 bottom-0 w-44 fill-base-300 -z-50">
-            <Dino1 />
-          </div>
+        <div class="absolute left-0 -top-10 w-44 fill-base-300 -z-50">
+          <Dino2 />
+        </div>
+
+        <div class="absolute right-0 bottom-0 w-44 fill-base-300 -z-50">
+          <Dino1 />
         </div>
       </div>
 
