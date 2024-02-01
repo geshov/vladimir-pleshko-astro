@@ -1,8 +1,9 @@
 ---
 import { Picture } from "astro:assets";
-import photo from "../assets/images/spiderman.jpg";
+import photo from "../assets/images/hero.jpg";
 
 import Spider from "./Spider.astro";
+import Dino1 from "./Dino1.astro";
 
 const widths = [400, 800, 1200, 1600];
 const sizes = "(max-width: 640px) 95vw, (max-width: 768px) 85vw, 30vw";
@@ -14,7 +15,7 @@ const ranks = [
   "Более 35 лет опыта работы в IT-отрасли",
 ];
 
-const cells = Array.from({ length: 150 }, (empty, index) => index);
+const cells = Array.from({ length: 120 }, (empty, index) => index);
 ---
 
 <section class="_section overflow-hidden">
@@ -63,8 +64,8 @@ const cells = Array.from({ length: 150 }, (empty, index) => index);
             <button class="btn btn-primary">История успеха</button>
           </div>
 
-          <div class="absolute right-0 bottom-0 w-32 fill-base-300 -z-50">
-            <Spider />
+          <div class="absolute right-0 bottom-0 w-44 fill-base-300 -z-50">
+            <Dino1 />
           </div>
         </div>
       </div>
