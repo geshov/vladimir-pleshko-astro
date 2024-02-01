@@ -1,7 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import { sortHistory } from "../utils/helpers";
+
+const history = sortHistory(await getCollection("history"));
+---
+
 <section x-ref="history" class="_section">
   <div class="_container">
     <ul
-      class="timeline timeline-snap-icon max-sm:timeline-compact timeline-vertical">
+      class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
       <li>
         <hr />
 
