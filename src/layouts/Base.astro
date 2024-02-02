@@ -3,7 +3,6 @@ import "@fontsource-variable/inter";
 import "../assets/css/global.css";
 
 import Background from "../components/Background.astro";
-import Navbar from "../components/Navbar.astro";
 
 import { getEntry } from "astro:content";
 const site = await getEntry("common", "site");
@@ -27,11 +26,8 @@ const { title, description } = Astro.props;
 
   <body x-ref="body" x-data="common">
     <Background />
-    <Navbar />
 
-    <main>
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>
 

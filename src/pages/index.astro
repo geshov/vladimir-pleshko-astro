@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import History from "../components/History.astro";
 import Competencies from "../components/Competencies.astro";
@@ -9,7 +10,11 @@ const index = await getEntry("pages", "index");
 ---
 
 <Base title={index.data.title} description={index.data.description}>
-  <Hero />
-  <History />
-  <Competencies />
+  <Navbar />
+
+  <main>
+    <Hero />
+    <History />
+    <Competencies />
+  </main>
 </Base>
