@@ -2,10 +2,12 @@
 import "@fontsource-variable/inter";
 import "../assets/css/global.css";
 
+import Background from "../components/Background.astro";
+
 import { getEntry } from "astro:content";
 const site = await getEntry("common", "site");
 
-import Background from "../components/Background.astro";
+const { title } = Astro.props;
 ---
 
 <html lang="ru">
@@ -16,7 +18,7 @@ import Background from "../components/Background.astro";
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={site.data.description} />
 
-    <title>{site.data.title} – Персональный сайт</title>
+    <title>{site.data.title} – {title}</title>
 
     <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
