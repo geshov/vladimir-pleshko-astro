@@ -1,22 +1,25 @@
 ---
+title: Компетенции
 left:
   - name: HTML
     percent: 70
   - name: CSS
-    percent: 75
+    percent: 65
+  - name: Tailwind
+    percent: 58
   - name: PHP
     percent: 80
   - name: JavaScript
-    percent: 82
+    percent: 78
 right:
   - name: Drupal
     percent: 70
   - name: MySQL
-    percent: 85
+    percent: 78
   - name: MariaDB
-    percent: 85
-  - name: Alpine.js
-    percent: 68
+    percent: 76
   - name: Astro
-    percent: 70
+    percent: 63
+  - name: Alpine.js
+    percent: 55
 ---
