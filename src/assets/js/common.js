@@ -6,9 +6,13 @@ export default function () {
       });
     },
 
-    scrollTo(el) {
+    scrollTo(target) {
       this.$el.blur();
-      el.scrollIntoView({ behavior: "smooth" });
+      if (target.offsetTop - window.scrollY < 0) {
+        target.classList.add("scroll-mt-16");
+      }
+      target.scrollIntoView({ behavior: "smooth" });
+      target.classList.remove("scroll-mt-16");
     },
   };
 }
