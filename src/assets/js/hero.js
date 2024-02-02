@@ -32,7 +32,7 @@ export default function () {
         scale: 0,
         borderRadius: "50%",
         easing: "linear",
-        duration: 2500,
+        duration: 1500,
       });
     },
   };
