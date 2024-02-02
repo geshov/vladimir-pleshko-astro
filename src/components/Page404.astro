@@ -1,0 +1,13 @@
+---
+const { title, description } = Astro.props;
+---
+
+<section class="h-screen">
+  <div
+    class="max-w-2xl mx-auto h-full flex flex-col justify-center items-center gap-6">
+    <div class="text-9xl font-bold">404</div>
+    <div class="text-3xl font-semibold text-center">{title}</div>
+    <div class="text-lg text-center">{description}</div>
+    <div><a href="/" class="btn btn-secondary">На главную</a></div>
+  </div>
+</section>

@@ -6,10 +6,10 @@ import History from "../components/History.astro";
 import Competencies from "../components/Competencies.astro";
 
 import { getEntry } from "astro:content";
-const index = await getEntry("pages", "index");
+const page = await getEntry("pages", "index");
 ---
 
-<Base title={index.data.title} description={index.data.description}>
+<Base title={page.data.title} description={page.data.description}>
   <Navbar />
 
   <main>
