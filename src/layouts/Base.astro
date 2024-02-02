@@ -2,6 +2,9 @@
 import "@fontsource-variable/inter";
 import "../assets/css/global.css";
 
+import { getEntry } from "astro:content";
+const site = await getEntry("common", "site");
+
 import Background from "../components/Background.astro";
 ---
 
@@ -11,12 +14,9 @@ import Background from "../components/Background.astro";
 
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Персональный сайт Владимира Юрьевича Плешко"
-    />
+    <meta name="description" content={site.data.description} />
 
-    <title>Владимир Плешко – Персональный сайт</title>
+    <title>{site.data.title} – Персональный сайт</title>
 
     <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
