@@ -5,7 +5,7 @@ const competencies = await getEntry("sections", "competencies");
 import CompetencyItem from "./CompetencyItem.astro";
 ---
 
-<section class="_section">
+<section x-ref="competencies" class="_section">
   <div class="_container">
     <div x-data="competencies" class="flex flex-col gap-10">
       <h2 class="text-4xl text-center font-semibold">

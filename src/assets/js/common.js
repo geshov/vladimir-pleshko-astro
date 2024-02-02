@@ -7,6 +7,7 @@ export default function () {
     },
 
     scrollTo(el) {
+      this.$el.blur();
       el.scrollIntoView({ behavior: "smooth" });
     },
   };

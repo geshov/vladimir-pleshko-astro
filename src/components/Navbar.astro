@@ -1,0 +1,70 @@
+---
+const menu = [
+  { name: "История", ref: "history" },
+  { name: "Компетенции", ref: "competencies" },
+];
+---
+
+<div
+  x-data="navbar"
+  @scroll.window="handleScroll"
+  class="_container sticky top-0 transition-transform duration-500 z-50"
+  :class="{'backdrop-blur-md': blurNavbar, '-translate-y-full': hideNavbar}">
+  <div class="navbar">
+    <div class="navbar-start">
+      <button x-on:click="scrollTo($refs.body)" class="text-2xl font-bold">
+        VYP
+      </button>
+    </div>
+
+    <div class="navbar-end">
+      <div class="hidden md:block">
+        <ul class="menu menu-horizontal text-lg py-0">
+          {
+            menu.map((item) => (
+              <li>
+                <button
+                  x-on:click={`scrollTo($refs.${item.ref})`}
+                  class="active:!bg-black active:!bg-opacity-25">
+                  {item.name}
+                </button>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="md:hidden w-10 h-10">
+        <label class="swap swap-rotate">
+          <input
+            x-ref="buttonMobileMenu"
+            @change="toggleMobileMenu"
+            type="checkbox"
+            aria-label="Меню"
+          />
+
+          <box-icon
+            name="menu-alt-right"
+            class="swap-off w-10 h-10 fill-current"></box-icon>
+          <box-icon name="x" class="swap-on w-10 h-10 fill-current"></box-icon>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div x-ref="mobileMenu" class="absolute top-18 right-8 hidden md:hidden">
+    <ul class="menu bg-base-300 rounded-box shadow text-lg p-4">
+      {
+        menu.map((item) => (
+          <li>
+            <button
+              x-on:click={`scrollTo($refs.${item.ref})`}
+              class="active:!bg-black active:!bg-opacity-25">
+              {item.name}
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

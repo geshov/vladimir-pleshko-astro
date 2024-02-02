@@ -3,6 +3,7 @@ import "@fontsource-variable/inter";
 import "../assets/css/global.css";
 
 import Background from "../components/Background.astro";
+import Navbar from "../components/Navbar.astro";
 
 import { getEntry } from "astro:content";
 const site = await getEntry("common", "site");
@@ -24,8 +25,9 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
 
-  <body x-data="common">
+  <body x-ref="body" x-data="common">
     <Background />
+    <Navbar />
 
     <main>
       <slot />
