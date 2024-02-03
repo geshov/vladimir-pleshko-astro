@@ -15,10 +15,8 @@ const cells = Array.from({ length: 120 }, (empty, index) => index);
 ---
 
 <section x-ref="hero" class="_section overflow-hidden">
-  <div class="_container">
-    <div
-      x-data="hero"
-      class="grid grid-cols-1 md:grid-cols-12 items-center gap-16">
+  <div x-data="hero" class="_container">
+    <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-16">
       <div class="relative md:col-span-7 md:order-2">
         <div
           x-intersect.half.once="showRanks"
