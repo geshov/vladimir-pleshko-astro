@@ -6,4 +6,6 @@ menu:
     ref: history
   - name: Компетенции
     ref: competencies
+  - name: Контакты
+    ref: contacts
 ---

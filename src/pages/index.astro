@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import History from "../components/History.astro";
 import Competencies from "../components/Competencies.astro";
+import Contacts from "../components/Contacts.astro";
 
 import { getEntry } from "astro:content";
 const page = await getEntry("pages", "index");
@@ -16,5 +17,6 @@ const page = await getEntry("pages", "index");
     <Hero />
     <History />
     <Competencies />
+    <Contacts />
   </main>
 </Base>
