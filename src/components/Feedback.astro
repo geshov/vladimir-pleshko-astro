@@ -1,0 +1,96 @@
+---
+import { getEntry } from "astro:content";
+const feedback = await getEntry("sections", "feedback");
+---
+
+<form
+  x-data="feedback"
+  @submit.prevent="handleSubmit"
+  class="group flex flex-col gap-6"
+  :class="formValidate"
+  novalidate>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div class="flex flex-col gap-1">
+      <input
+        type="text"
+        name="name"
+        class="peer input input-bordered input-accent placeholder-black placeholder-opacity-50"
+        placeholder={feedback.data.name.label}
+        required
+      />
+
+      <div
+        class="hidden group-[.validate]:peer-invalid:block text-sm text-error">
+        {feedback.data.name.required}
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <input
+        type="email"
+        name="email"
+        class="peer input input-bordered input-accent placeholder-black placeholder-opacity-50"
+        placeholder={feedback.data.email.label}
+        required
+      />
+
+      <div
+        class="hidden group-[.validate]:peer-invalid:block text-sm text-error">
+        {feedback.data.email.required}
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <input
+      type="text"
+      name="subject"
+      class="peer input input-bordered input-accent placeholder-black placeholder-opacity-50"
+      placeholder={feedback.data.subject.label}
+      required
+    />
+
+    <div class="hidden group-[.validate]:peer-invalid:block text-sm text-error">
+      {feedback.data.subject.required}
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <textarea
+      name="message"
+      rows="5"
+      class="peer textarea textarea-bordered textarea-accent text-base placeholder-black placeholder-opacity-50"
+      placeholder={feedback.data.message.label}
+      required></textarea>
+
+    <div class="hidden group-[.validate]:peer-invalid:block text-sm text-error">
+      {feedback.data.message.required}
+    </div>
+  </div>
+
+  <div>
+    <label class="flex flex-wrap items-center gap-x-3 gap-y-0 cursor-pointer">
+      <input type="checkbox" class="peer checkbox checkbox-accent" required />
+
+      <span class="basis-0 flex-grow">
+        {feedback.data.agree.label}
+      </span>
+
+      <div
+        class="hidden group-[.validate]:peer-invalid:block text-sm text-error">
+        {feedback.data.agree.required}
+      </div>
+    </label>
+  </div>
+
+  <div class="text-center">
+    <button
+      type="submit"
+      class="btn"
+      :class="submitButtonColor"
+      :disabled="submitButtonDisable"
+      x-html="submitButtonText">
+      Отправить
+    </button>
+  </div>
+</form>
