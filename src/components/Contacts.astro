@@ -1,11 +1,14 @@
 ---
+import { getEntry } from "astro:content";
+const contacts = await getEntry("sections", "contacts");
+
 import Feedback from "./Feedback.astro";
 ---
 
 <section x-ref="contacts" class="_section">
   <div class="_container">
     <div class="flex flex-col gap-10">
-      <h2 class="text-4xl text-center font-semibold">Контактная информация</h2>
+      <h2 class="text-4xl text-center font-semibold">{contacts.data.title}</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>Контакты</div>
