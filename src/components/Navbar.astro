@@ -10,7 +10,7 @@ const site = await getEntry("common", "site");
   :class="{'backdrop-blur-md': blurNavbar, '-translate-y-full': hideNavbar}">
   <div class="navbar">
     <div class="navbar-start">
-      <button x-on:click="scrollTo($refs.hero)" class="text-2xl font-bold">
+      <button x-on:click="scrollTo($refs.body)" class="text-2xl font-bold">
         {site.data.logo}
       </button>
     </div>
