@@ -13,3 +13,7 @@ body {
 ._ {
   @apply aspect-square bg-base-100;
 }
+
+._prose {
+  @apply prose prose-img:rounded-lg prose-img:border prose-img:border-base-300;
+}
