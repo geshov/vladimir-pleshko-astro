@@ -2,6 +2,7 @@
 import { getEntry } from "astro:content";
 const contacts = await getEntry("sections", "contacts");
 
+import Dino3 from "./Dino3.astro";
 import Feedback from "./Feedback.astro";
 ---
 
@@ -10,7 +11,7 @@ import Feedback from "./Feedback.astro";
     <div class="flex flex-col gap-10">
       <h2 class="text-4xl text-center font-semibold">{contacts.data.title}</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
           <div class="flex flex-wrap justify-center items-start gap-8">
             <a
@@ -34,6 +35,10 @@ import Feedback from "./Feedback.astro";
                 class="w-14 h-14 fill-sky-500 opacity-65"></box-icon>
               <div class="text-lg">{contacts.data.telegram}</div>
             </a>
+          </div>
+
+          <div class="w-52 mx-auto my-10 fill-base-300">
+            <Dino3 />
           </div>
         </div>
 
