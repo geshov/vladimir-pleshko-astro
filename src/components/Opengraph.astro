@@ -1,0 +1,27 @@
+---
+import { getImage } from "astro:assets";
+import photo from "../assets/images/og.jpg";
+
+import { getEntry } from "astro:content";
+const site = await getEntry("common", "site");
+
+const image = await getImage({
+  src: photo,
+  format: "png",
+  width: 512,
+  alt: site.data.name,
+});
+
+const { title, description } = Astro.props;
+---
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url.href} />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:title" content={site.data.name + " – " + title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={Astro.url.origin + image.src} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content={image.attributes.width} />
+<meta property="og:image:height" content={image.attributes.height} />
+<meta property="og:image:alt" content={image.attributes.alt} />

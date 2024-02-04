@@ -2,6 +2,7 @@
 import "@fontsource-variable/inter";
 import "../assets/css/global.css";
 
+import Opengraph from "../components/Opengraph.astro";
 import Background from "../components/Background.astro";
 
 import { getEntry } from "astro:content";
@@ -22,17 +23,17 @@ const { title, description } = Astro.props;
 
     <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <Opengraph title={title} description={description} />
   </head>
 
   <body x-data="common" x-ref="body">
     <Background />
 
     <slot />
-  </body>
+  </body><script>
+    import "boxicons";
+  </script>
+
+  <script src="../assets/js/metrika"></script>
 </html>
-
-<script>
-  import "boxicons";
-</script>
-
-<script src="../assets/js/metrika"></script>
