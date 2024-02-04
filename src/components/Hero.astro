@@ -6,7 +6,7 @@ import Dino1 from "./Dino1.astro";
 import Dino2 from "./Dino2.astro";
 
 const widths = [400, 600, 800, 1000, 1200, 1400, 1600];
-const sizes = "(max-width: 768px) 90vw, (max-width: 1280px) 35vw, 30vw";
+const sizes = "(min-width: 1280px) 30vw, (min-width: 768px) 35vw, 90vw";
 
 import { getEntry } from "astro:content";
 const hero = await getEntry("sections", "hero");
