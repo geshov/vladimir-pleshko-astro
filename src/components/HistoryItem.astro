@@ -17,7 +17,9 @@ const { Content } = await item.render();
     } !mb-10`}>
     <time class="font-mono">{item.data.year}</time>
     <div class="text-xl font-bold mb-2">{item.data.title}</div>
-    <Content />
+    <div class="prose">
+      <Content />
+    </div>
   </div>
 
   <hr />
