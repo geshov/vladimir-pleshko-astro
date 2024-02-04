@@ -1,7 +1,7 @@
 export default function () {
   return {
     status: "init",
-    action: "/",
+    action: "https://formbold.com/s/35ely",
 
     handleSubmit() {
       const form = this.$root;
