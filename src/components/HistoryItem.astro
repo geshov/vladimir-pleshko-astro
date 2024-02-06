@@ -15,7 +15,18 @@ const { Content } = await item.render();
     class={`${
       index % 2 === 0 ? "timeline-start md:text-end" : "timeline-end"
     } !mb-10`}>
-    <time class="font-mono">{item.data.year}</time>
+    <div class="font-mono">
+      {item.data.from === item.data.to && <>{item.data.from}</>}
+      {
+        item.data.from !== item.data.to && (
+          <>
+            {item.data.to === 0
+              ? `${item.data.from}–настоящее время`
+              : `${item.data.from}–${item.data.to}`}
+          </>
+        )
+      }
+    </div>
     <div class="text-lg sm:text-xl font-bold mb-2">{item.data.title}</div>
     <div class="_prose">
       <Content />

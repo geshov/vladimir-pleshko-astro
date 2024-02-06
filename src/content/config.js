@@ -11,7 +11,8 @@ const pages = defineCollection({
 const history = defineCollection({
   type: "content",
   schema: z.object({
-    year: z.number(),
+    from: z.number(),
+    to: z.number(),
     title: z.string(),
   }),
 });
