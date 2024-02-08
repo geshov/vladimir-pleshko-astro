@@ -2,15 +2,14 @@
 import { getEntry } from "astro:content";
 const competencies = await getEntry("sections", "competencies");
 
+import SectionTitle from "./SectionTitle.astro";
 import CompetencyItem from "./CompetencyItem.astro";
 ---
 
 <section x-ref="competencies" class="_section">
   <div x-data="competencies" class="_container">
     <div class="flex flex-col gap-10">
-      <h2 class="text-3xl sm:text-4xl text-center font-semibold">
-        {competencies.data.title}
-      </h2>
+      <SectionTitle title={competencies.data.title} />
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
         <div class="flex flex-col gap-6">

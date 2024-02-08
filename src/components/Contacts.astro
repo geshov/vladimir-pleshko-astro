@@ -2,6 +2,7 @@
 import { getEntry } from "astro:content";
 const contacts = await getEntry("sections", "contacts");
 
+import SectionTitle from "./SectionTitle.astro";
 import Dino3 from "./Dino3.astro";
 import Feedback from "./Feedback.astro";
 ---
@@ -9,9 +10,7 @@ import Feedback from "./Feedback.astro";
 <section x-ref="contacts" class="_section">
   <div class="_container">
     <div class="flex flex-col gap-10">
-      <h2 class="text-3xl sm:text-4xl text-center font-semibold">
-        {contacts.data.title}
-      </h2>
+      <SectionTitle title={contacts.data.title} />
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
