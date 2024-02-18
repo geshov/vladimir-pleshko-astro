@@ -2,12 +2,14 @@
 const { title, description } = Astro.props;
 ---
 
-<section class="h-screen">
-  <div
-    class="max-w-2xl mx-auto h-full flex flex-col justify-center items-center gap-6">
-    <div class="text-9xl font-bold">404</div>
-    <div class="text-3xl font-semibold text-center">{title}</div>
-    <div class="text-lg text-center">{description}</div>
-    <div><a href="/" class="btn btn-secondary">На главную</a></div>
+<section class="_section h-screen">
+  <div class="_container h-full">
+    <div
+      class="max-w-2xl mx-auto h-full flex flex-col justify-center items-center gap-6">
+      <div class="text-8xl sm:text-9xl font-bold text-center">404</div>
+      <div class="text-2xl sm:text-3xl font-semibold text-center">{title}</div>
+      <div class="text-base sm:text-lg text-center">{description}</div>
+      <div><a href="/" class="btn btn-secondary">На главную</a></div>
+    </div>
   </div>
 </section>
