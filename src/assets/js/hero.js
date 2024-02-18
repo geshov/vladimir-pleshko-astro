@@ -2,6 +2,29 @@ import anime from "animejs/lib/anime.es.js";
 
 export default function () {
   return {
+    showDino1() {
+      const el = this.$el;
+
+      anime({
+        targets: el,
+        scale: 1,
+        translateY: 0,
+        duration: 2000,
+        easing: "easeInOutQuad",
+      });
+    },
+
+    showDino2() {
+      const el = this.$el;
+
+      anime({
+        targets: el,
+        opacity: 1,
+        duration: 1500,
+        easing: "linear",
+      });
+    },
+
     showRanks() {
       const ranks = document.querySelectorAll(".rank");
 
