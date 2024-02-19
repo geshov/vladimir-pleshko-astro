@@ -43,19 +43,11 @@ export default function () {
 
     showPhoto() {
       anime({
-        targets: ".cover",
-        opacity: 0,
-        easing: "linear",
-        delay: 250,
-        duration: 500,
-      });
-
-      anime({
         targets: "._",
         scale: 0,
         borderRadius: "50%",
         easing: "linear",
-        duration: 1500,
+        delay: anime.stagger(200, { grid: [10, 12], from: "center" }),
       });
     },
   };
