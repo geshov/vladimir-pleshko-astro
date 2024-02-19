@@ -29,6 +29,7 @@ export default function () {
       const ranks = document.querySelectorAll(".rank");
 
       const timeline = anime.timeline({
+        delay: 250,
         duration: 750,
       });
 
