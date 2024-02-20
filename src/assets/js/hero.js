@@ -19,9 +19,11 @@ export default function () {
 
       anime({
         targets: el,
-        opacity: 1,
-        duration: 1500,
+        opacity: [0, 1],
+        translateX: [0, 3, 0, -3, 0],
         easing: "linear",
+        duration: 75,
+        loop: 15,
       });
     },
 
