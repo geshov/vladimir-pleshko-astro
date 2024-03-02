@@ -4,6 +4,7 @@ import "../assets/css/global.css";
 
 import Opengraph from "../components/Opengraph.astro";
 import Background from "../components/Background.astro";
+import Footer from "../components/Footer.astro";
 
 import { getEntry } from "astro:content";
 const site = await getEntry("common", "site");
@@ -31,6 +32,8 @@ const { title, description } = Astro.props;
     <Background />
 
     <slot />
+
+    <Footer />
 
     <script src="../assets/js/metrika"></script>
   </body>

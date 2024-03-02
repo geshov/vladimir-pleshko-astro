@@ -17,3 +17,7 @@ body {
 ._prose {
   @apply prose prose-a:text-amber-800 prose-a:font-normal prose-img:rounded-lg prose-img:border prose-img:border-base-300;
 }
+
+._link {
+  @apply text-amber-800;
+}
