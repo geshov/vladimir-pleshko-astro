@@ -8,7 +8,7 @@ export default function () {
       anime({
         targets: el,
         value: Number(el.dataset.value),
-        easing: "easeInOutExpo",
+        easing: "easeInOutQuart",
       });
     },
   };
