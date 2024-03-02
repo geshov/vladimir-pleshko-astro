@@ -41,10 +41,21 @@ const site = await getEntry("common", "site");
             aria-label="Меню"
           />
 
-          <box-icon
-            name="menu-alt-right"
-            class="swap-off w-10 h-10 fill-current"></box-icon>
-          <box-icon name="x" class="swap-on w-10 h-10 fill-current"></box-icon>
+          <svg
+            class="swap-off w-10 h-10 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24">
+            <path d="M4 6h16v2H4zm4 5h12v2H8zm5 5h7v2h-7z"></path>
+          </svg>
+
+          <svg
+            class="swap-on w-10 h-10 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24">
+            <path
+              d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"
+            ></path>
+          </svg>
         </label>
       </div>
     </div>
