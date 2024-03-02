@@ -72,9 +72,9 @@ const feedback = await getEntry("sections", "feedback");
     <label class="flex flex-wrap items-center gap-x-3 gap-y-0 cursor-pointer">
       <input type="checkbox" class="peer checkbox checkbox-accent" required />
 
-      <span class="basis-0 flex-grow">
+      <div class="basis-0 flex-grow">
         {feedback.data.agree.label}
-      </span>
+      </div>
 
       <div
         class="hidden group-[.validate]:peer-invalid:block text-sm text-error">
