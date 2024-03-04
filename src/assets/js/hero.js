@@ -47,7 +47,7 @@ export default function () {
     showPhoto() {
       anime({
         targets: "._",
-        scale: 0,
+        scale: [1.05, 0],
         borderRadius: "50%",
         easing: "linear",
         delay: anime.stagger(200, { grid: [10, 12], from: "center" }),

@@ -12,6 +12,7 @@ body {
 
 ._ {
   @apply aspect-square bg-base-100;
+  transform: scale(1.05);
 }
 
 ._prose {
