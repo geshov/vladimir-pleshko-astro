@@ -20,7 +20,7 @@ import Icon from "./Icon.astro";
               href={`mailto:${contacts.data.email}`}
               target="_blank"
               class="flex flex-col items-center gap-1">
-              <Icon name="envelope" styles="w-14 h-14 fill-accent" />
+              <Icon name="envelope" class="w-14 h-14 fill-accent" />
               <div class="text-lg">{contacts.data.email}</div>
             </a>
 
@@ -28,10 +28,7 @@ import Icon from "./Icon.astro";
               href={contacts.data.telegram}
               target="_blank"
               class="flex flex-col items-center gap-1">
-              <Icon
-                name="telegram"
-                styles="w-14 h-14 fill-sky-500 opacity-65"
-              />
+              <Icon name="telegram" class="w-14 h-14 fill-sky-500 opacity-65" />
               <div class="text-lg">{contacts.data.telegram}</div>
             </a>
           </div>
