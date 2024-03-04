@@ -1,5 +1,6 @@
 ---
 import Icon from "./Icon.astro";
+import Logo from "./Logo.astro";
 
 import { getEntry } from "astro:content";
 const site = await getEntry("common", "site");
@@ -12,8 +13,10 @@ const site = await getEntry("common", "site");
   :class="{'backdrop-blur-md': blurNavbar, '-translate-y-full': hideNavbar}">
   <div class="navbar">
     <div class="navbar-start w-fit">
-      <button x-on:click="scrollTo($refs.body)" class="text-2xl font-bold">
-        {site.data.logo}
+      <button
+        x-on:click="scrollTo($refs.body)"
+        class="w-10 h-10 fill-secondary">
+        <Logo />
       </button>
     </div>
 
