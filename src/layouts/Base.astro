@@ -2,6 +2,7 @@
 import "@fontsource-variable/inter";
 import "../assets/css/global.css";
 
+import Favicon from "../components/Favicon.astro";
 import Opengraph from "../components/Opengraph.astro";
 import Background from "../components/Background.astro";
 
@@ -22,8 +23,8 @@ const { title, description } = Astro.props;
     <title>{site.data.name} – {title}</title>
 
     <link rel="canonical" href={Astro.url.href} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <Favicon />
     <Opengraph title={title} description={description} />
   </head>
 
