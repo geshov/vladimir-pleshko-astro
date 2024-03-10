@@ -1,4 +1,6 @@
 ---
+import Logo from "./Logo.astro";
+
 const { title, description } = Astro.props;
 ---
 
@@ -6,7 +8,13 @@ const { title, description } = Astro.props;
   <div class="_container">
     <div
       class="min-h-[calc(100vh-6rem)] max-w-2xl mx-auto flex flex-col justify-center items-center gap-6">
-      <div class="text-8xl sm:text-9xl font-bold text-center">404</div>
+      <div class="flex items-center gap-2">
+        <div class="text-8xl sm:text-9xl font-bold text-accent">4</div>
+        <div class="w-20 h-20 sm:w-24 sm:h-24">
+          <Logo />
+        </div>
+        <div class="text-8xl sm:text-9xl font-bold text-accent">4</div>
+      </div>
       <div class="text-2xl sm:text-3xl font-semibold text-center">{title}</div>
       <div class="text-base sm:text-lg text-center">{description}</div>
       <div><a href="/" class="btn btn-secondary">На главную</a></div>
